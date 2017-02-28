@@ -5,14 +5,14 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Feb 28 17:23:43 2017 remy
-** Last update Tue Feb 28 18:10:18 2017 remy
+** Last update Tue Feb 28 21:16:38 2017 remy
 */
 
 #include <fcntl.h>
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include "get_next_line.h"
+#include "gnl.h"
 #include "my_printf.h"
 #include "tetris.h"
 

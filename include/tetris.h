@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Feb 28 17:46:38 2017 remy
+** Last update Tue Feb 28 21:16:25 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -20,6 +20,16 @@
 # define RET_SUCCESS	0
 
 typedef int		t_opt;
+
+typedef struct		s_key_binding
+{
+  int			key_drop;
+  int			key_left;
+  int			key_pause;
+  int			key_quit;
+  int			key_right;
+  int			key_turn;
+}			t_key_binding;
 
 typedef struct		s_object
 {
@@ -47,6 +57,7 @@ int		help_flag(void);
 t_list		*init_list();
 bool		is_help_flag(char *);
 int		launch_opt(t_opt);
+char		**my_str_to_wordtab_space(char *);
 int		my_strcmp(char *, char *);
 char		*my_strdup(char *);
 int		my_strlen(char *);
