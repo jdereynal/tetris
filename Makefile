@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Tue Feb 28 17:46:21 2017 remy
+## Last update Tue Feb 28 18:20:52 2017 remy
 ##
 
 CC	=	gcc
@@ -37,7 +37,7 @@ CFLAGS	=	-I./include/
 
 # flags cancer CFLAGS	+=	-W -Wall -Wextra
 
-LDFLAGS =	-L./lib/my_gnl/ -lmy_gnl
+LDFLAGS =	-L./lib/gnl/ -lgnl
 
 LDFLAGS +=      -L./lib/my_printf/ -lmy_printf
 
@@ -52,17 +52,14 @@ endif
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	make -C lib/my_gnl/ all
 	make -C lib/my_printf/ all
 	$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)
 
 clean:
-	make -C lib/my_gnl/ clean
 	make -C lib/my_printf/ clean
 	rm -f $(OBJS)
 
 fclean:	clean
-	make -C lib/my_gnl/ fclean
 	make -C lib/my_printf/ fclean
 	rm -f $(NAME)
 

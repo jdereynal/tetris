@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Feb 28 11:37:45 2017 remy
-** Last update Tue Feb 28 11:55:19 2017 remy
+** Last update Tue Feb 28 18:23:05 2017 remy
 */
 
 #include "tetris.h"
@@ -16,5 +16,5 @@ t_opt	check_args(int argc, char **argv)
     return (OPT_ERROR);
   else if ((argc == 2) && (is_help_flag(argv[1])))
     return (OPT_HELP);
-  return (RET_SUCCESS);
+  return (RET_FAIL);
 }
