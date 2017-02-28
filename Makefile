@@ -5,24 +5,24 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Tue Feb 28 12:17:45 2017 jack
+## Last update Tue Feb 28 11:56:15 2017 remy
 ##
 
 CC	=	gcc
 
 SRC	=	srcs/
 
-SRCS	=	$(SRC)main.c \
-		$(SRC)ll.c \
-		$(SRC)get_tetriminos.c \
-		$(SRC)my_strlen.c \
-		$(SRC)my_strdup.c \
-		$(SRC)extension.c \
-		$(SRC)concat.c \
-		$(SRC)rotate.c \
-		$(SRC)reverse.c \
-		$(SRC)tab_utils.c \
-		$(SRC)errors.c \
+SRCS	=	$(SRC)check_args.c	\
+		$(SRC)concat.c		\
+		$(SRC)extension.c	\
+		$(SRC)get_tetriminos.c	\
+		$(SRC)launch_opt.c	\
+		$(SRC)ll.c		\
+		$(SRC)main.c		\
+		$(SRC)my_strdup.c	\
+		$(SRC)my_strlen.c	\
+		$(SRC)reverse.c		\
+		$(SRC)rotate.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 

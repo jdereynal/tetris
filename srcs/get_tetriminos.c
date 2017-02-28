@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Tue Feb 28 13:25:08 2017 jack
+** Last update Tue Feb 28 11:34:49 2017 remy
 */
 
 #include <dirent.h>
@@ -15,27 +15,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include "tetris.h"
-
-int		parse_tetrimino(int fd, t_object *obj)
-{
-  char		*str;
-  int		i;
-
-  if ((str = get_next_line(fd)) == NULL || only_numbers(str) == false)
-      return (RET_FAIL);
-  //str_to_wordtab();
-  obj->height = 10; //temporaire, remplacer par atoI(tab[1])
-  if ((obj->shape = malloc(sizeof(char *) * (obj->height + 1))) == NULL)
-    return (RET_FAIL);
-  i = 0;
-  while ((str = get_next_line(fd)) != NULL )
-    {
-      obj->shape[i++] = my_strdup(str);
-      free(str);
-    }
-  obj->shape[i] = 0;
-  return (RET_SUCCESS);
-}
 
 int		parse_file(char *name, char *folder, t_object *obj)
 {
@@ -49,7 +28,11 @@ int		parse_file(char *name, char *folder, t_object *obj)
   if ((obj->name = my_strdup(str)) == NULL)
     return (RET_FAIL);
   free(str);
-  return (parse_tetrimino(fd, obj));
+  while ((str = get_next_line(fd)))
+    {
+      free(str);
+    }
+  return (RET_SUCCESS);
 }
 
 int		read_directory(char *path, t_list *my_list)
@@ -64,8 +47,8 @@ int		read_directory(char *path, t_list *my_list)
     {
       if (extension(res->d_name, ".tetrimino"))
 	{
-	  if (parse_file(res->d_name, path, &obj) == RET_SUCCESS)
-	    add_elem_to_list(obj, my_list);
+	  parse_file(res->d_name, path, &obj);
+	  add_elem_to_list(obj, my_list);
 	}
     }
   return (RET_SUCCESS);

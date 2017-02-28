@@ -5,10 +5,9 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Tue Feb 28 16:19:17 2017 remy
+** Last update Tue Feb 28 11:55:07 2017 remy
 */
 
-#include <stdlib.h>
 #include "my_printf.h"
 #include "tetris.h"
 

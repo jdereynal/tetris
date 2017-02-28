@@ -1,11 +1,11 @@
 /*
 ** my_printf.h for my in /home/remy.machado/Pool_Second_Try/include
-**
+** 
 ** Made by remy machado
 ** Login   <remy.machado@epitech.net>
-**
+** 
 ** Started on  Tue Oct 18 14:53:02 2016 remy machado
-** Last update Tue Feb 28 13:16:45 2017 jack
+** Last update Thu Feb 23 14:36:50 2017 remy
 */
 
 #ifndef MY_PRINTF_H_

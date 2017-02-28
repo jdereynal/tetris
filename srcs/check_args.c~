@@ -1,0 +1,18 @@
+/*
+** check_args.c for tetris in /home/remy/blinux/remy.machado/PSU_2016_tetris/srcs
+** 
+** Made by remy
+** Login   <remy@epitech.net>
+** 
+** Started on  Tue Feb 28 11:37:45 2017 remy
+** Last update Tue Feb 28 11:45:48 2017 remy
+*/
+
+#include "tetris.h"
+
+int	check_args(int argc, char **argv)
+{
+  if (argc < 2)
+    return (OPT_ERROR);
+  return (RET_SUCCESS);
+}

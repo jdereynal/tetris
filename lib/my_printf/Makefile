@@ -1,14 +1,12 @@
 ##
 ## Makefile for printf_bootstrap in /home/remy.machado/PSU_2016_my_printf_bootstrap
-##
+## 
 ## Made by remy machado
 ## Login   <remy.machado@epitech.net>
-##
+## 
 ## Started on  Wed Nov  9 18:04:12 2016 remy machado
-## Last update Tue Feb 28 11:58:07 2017 jack
+## Last update Thu Feb 23 11:18:14 2017 remy
 ##
-
-CC	=	gcc
 
 ar_rc	=	ar rc
 
