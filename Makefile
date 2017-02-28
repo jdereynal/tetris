@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Tue Feb 28 11:56:15 2017 remy
+## Last update Tue Feb 28 16:42:13 2017 jack
 ##
 
 CC	=	gcc
@@ -23,6 +23,8 @@ SRCS	=	$(SRC)check_args.c	\
 		$(SRC)my_strlen.c	\
 		$(SRC)reverse.c		\
 		$(SRC)rotate.c		\
+		$(SRC)errors.c		\
+		$(SRC)tab_utils.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

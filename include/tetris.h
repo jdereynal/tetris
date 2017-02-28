@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Feb 28 11:54:31 2017 remy
+** Last update Tue Feb 28 16:40:18 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -23,6 +23,7 @@ typedef int		t_opt;
 typedef struct		s_object
 {
   char			*name;
+  char			**shape;
   int			color;
   int			height;
   int			width;
@@ -31,6 +32,7 @@ typedef struct		s_object
 typedef struct		s_list
 {
   t_object		obj;
+  int			id;
   struct s_list		*next;
 }			t_list;
 

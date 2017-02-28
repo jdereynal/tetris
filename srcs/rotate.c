@@ -5,37 +5,11 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Feb 27 19:16:50 2017 jack
-** Last update Tue Feb 28 10:30:26 2017 jack
+** Last update Tue Feb 28 16:43:03 2017 jack
 */
 
 #include <stdlib.h>
 #include "tetris.h"
-
-int	my_tab_length(char **tab)
-{
-  int	i;
-
-  i = 0;
-  while (tab[i])
-    i++;
-  return (i);
-}
-
-int	biggest(char **shape)
-{
-  int	i;
-  int	max;
-
-  i = 0;
-  max = 0;
-  while (shape[i])
-    {
-      if (my_strlen(shape[i]) > max)
-	max = my_strlen(shape[i]);
-      i++;
-    }
-  return (max);
-}
 
 char	**rotate(char **shape)
 {
@@ -44,7 +18,7 @@ char	**rotate(char **shape)
   char	**result;
   char	*tmp;
 
-  if ((result = malloc(sizeof(char *) * (biggest(shape) + 1))) == NULL)
+  if ((result = malloc(sizeof(char *) * (biggest_line(shape) + 1))) == NULL)
     return (NULL);
   if ((tmp = malloc(sizeof(char) * (my_strlen(shape[0] + 1)))) == NULL)
     return (NULL);
