@@ -1,0 +1,26 @@
+/*
+** errors.c for tetris in /home/jack/rendu/psu/tetris
+**
+** Made by jack
+** Login   <jack@epitech.net>
+**
+** Started on  Tue Feb 28 12:15:11 2017 jack
+** Last update Tue Feb 28 12:17:20 2017 jack
+*/
+
+#include "tetris.h"
+
+bool	only_numbers(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i])
+    {
+      if (str[i] < '0' || str[i] > '9')
+	if (str[i] != ' ')
+	  return (false);
+      i++;
+    }
+  return (true);
+}
