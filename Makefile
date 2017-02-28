@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Tue Feb 28 16:42:13 2017 jack
+## Last update Tue Feb 28 17:46:21 2017 remy
 ##
 
 CC	=	gcc
@@ -16,9 +16,12 @@ SRCS	=	$(SRC)check_args.c	\
 		$(SRC)concat.c		\
 		$(SRC)extension.c	\
 		$(SRC)get_tetriminos.c	\
+		$(SRC)is_help_flag.c	\
+		$(SRC)help_flag.c	\
 		$(SRC)launch_opt.c	\
 		$(SRC)ll.c		\
 		$(SRC)main.c		\
+		$(SRC)my_strcmp.c	\
 		$(SRC)my_strdup.c	\
 		$(SRC)my_strlen.c	\
 		$(SRC)reverse.c		\

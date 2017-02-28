@@ -5,12 +5,14 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Feb 28 11:48:31 2017 remy
-** Last update Tue Feb 28 16:19:00 2017 remy
+** Last update Tue Feb 28 17:23:27 2017 remy
 */
 
 #include "tetris.h"
 
-int	launch_opt(int opt)
+int	launch_opt(t_opt opt)
 {
+  if (opt == OPT_HELP)
+    return (help_flag());
   return (RET_SUCCESS);
 }
