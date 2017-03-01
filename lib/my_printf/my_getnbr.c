@@ -1,68 +1,64 @@
 /*
-** my_getnbr.c for my_getnbr in /home/remy.machado/Pool_Second_Try/CPool_Day04
+** my_getnbr.c for printf in /home/jack/rendu/psu/printf
 **
-** Made by remy machado
-** Login   <remy.machado@epitech.net>
+** Made by jack
+** Login   <jack@epitech.net>
 **
-** Started on  Thu Oct 20 10:46:41 2016 remy machado
-** Last update Wed Mar  1 17:53:13 2017 jack
+** Started on  Sun Feb 26 17:32:14 2017 jack
+** Last update Tue Feb 28 16:26:08 2017 jack
 */
 
-#include <stdbool.h>
-#include <stdlib.h>
-#include "my_printf.h"
+int	my_strlen(char *);
 
-int	const_strlen(const char *str)
+int	is_neg(char *str, int i)
 {
-  int	i;
+  int	size;
 
-  i = 0;
-  if (str == NULL)
-    return (0);
-  while (str[i] != '\0')
-    ++i;
-  return (i);
+  size = my_strlen(str);
+  i -= 1;
+  while (i >= 0)
+    {
+      if (str[i] == '-')
+	return (1);
+      i--;
+    }
+  return (0);
 }
 
-int	my_getnbr_part_2(const char *nbr, int index, bool is_neg)
+int		overflow(int nbr, char *str, int i, int neg)
 {
-  int	i;
-  int	pow;
-  int	sum;
+  char		ovflw;
+  unsigned int	calcul;
 
-  i = index;
-  while (i != 0)
-    {
-      if (!my_char_isnum(nbr[i]))
-	index = i - 1;
-      --i;
-    }
-  pow = 1;
-  sum = 0;
-  while (index >= 0)
-    {
-      sum += (pow * (nbr[index] - '0'));
-      pow *= 10;
-      --index;
-    }
-  if (is_neg == true)
-    sum *= (-1);
-  return (sum);
+  ovflw = 0;
+  calcul = nbr * 10 + (str[i] - '0');
+  if (calcul > 2147483647 && !neg)
+    ovflw = 1;
+  else if (calcul > 2147483648 && neg)
+    ovflw = 1;
+  return (ovflw);
 }
 
-int     my_getnbr(const char *nbr)
+int	my_getnbr(char *str)
 {
   int	i;
-  int   index;
-  bool  is_neg;
+  int	neg;
+  int	nbr;
 
   i = 0;
-  is_neg = false;
-  while (!my_char_isnum(nbr[i]))
-    ++i;
-  if (nbr[i - 1] == '-')
-    is_neg = true;
-  nbr += i;
-  index = (const_strlen(nbr) - 1);
-  return (my_getnbr_part_2(nbr, index, is_neg));
+  nbr = 0;
+  while (!(str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
+    i++;
+  neg = is_neg(str, i);
+  while (str[i] >= '0' && str[i] <= '9')
+    {
+      if (!(overflow(nbr, str, i, neg)))
+	nbr = nbr * 10 + (str[i] - '0');
+      else
+	return (0);
+      i++;
+    }
+  if (neg)
+    nbr = -nbr;
+  return (nbr);
 }
