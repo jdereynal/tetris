@@ -5,8 +5,10 @@
 ## Login   <remy.machado@epitech.net>
 ## 
 ## Started on  Wed Nov  9 18:04:12 2016 remy machado
-## Last update Thu Feb 23 11:18:14 2017 remy
+## Last update Wed Mar  1 16:22:21 2017 jack
 ##
+
+CC	= 	gcc
 
 ar_rc	=	ar rc
 

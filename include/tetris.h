@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Wed Mar  1 15:17:18 2017 jack
+** Last update Wed Mar  1 15:41:38 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -38,6 +38,7 @@ typedef struct		s_object
   int			color;
   int			height;
   int			width;
+  int			error;
 }			t_object;
 
 typedef struct		s_list

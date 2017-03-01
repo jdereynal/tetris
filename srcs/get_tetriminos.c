@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Wed Mar  1 11:32:29 2017 jack
+** Last update Wed Mar  1 16:04:22 2017 jack
 */
 
 #include <dirent.h>
@@ -23,7 +23,10 @@ int		parse_tetrimino(int fd, t_object *obj)
   int		i;
 
   if ((str = get_next_line(fd)) == NULL || only_numbers(str) == false)
-      return (RET_FAIL);
+    {
+      obj->error = 1;
+      return (RET_SUCCESS);
+    }
   tab = my_str_to_wordtab_space(str);
   if (my_tab_length(tab) < 3)
     return (RET_FAIL);
@@ -33,12 +36,13 @@ int		parse_tetrimino(int fd, t_object *obj)
   if ((obj->shape = malloc(sizeof(char *) * (obj->height + 1))) == NULL)
     return (RET_FAIL);
   i = 0;
-  while ((str = get_next_line(fd)) != NULL )
+  while ((str = get_next_line(fd)) != NULL)
     {
       obj->shape[i++] = my_strdup(str);
       free(str);
     }
   obj->shape[i] = 0;
+  obj->error = 0;
   return (RET_SUCCESS);
 }
 

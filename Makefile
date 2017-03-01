@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Tue Feb 28 21:16:01 2017 remy
+## Last update Wed Mar  1 15:35:24 2017 jack
 ##
 
 CC	=	gcc
@@ -30,6 +30,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)rotate.c			\
 		$(SRC)errors.c			\
 		$(SRC)tab_utils.c		\
+		$(SRC)print_tetriminos.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
