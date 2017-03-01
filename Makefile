@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Wed Mar  1 15:35:24 2017 jack
+## Last update Wed Mar  1 17:37:41 2017 jack
 ##
 
 CC	=	gcc
@@ -22,7 +22,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)launch_opt.c		\
 		$(SRC)ll.c			\
 		$(SRC)main.c			\
-		$(SRC)my_str_to_wordtab_space.c	\
+		$(SRC)str_to_wordtab.c		\
 		$(SRC)my_strcmp.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\

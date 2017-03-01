@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Wed Mar  1 16:04:22 2017 jack
+** Last update Wed Mar  1 17:38:57 2017 jack
 */
 
 #include <dirent.h>
@@ -27,7 +27,7 @@ int		parse_tetrimino(int fd, t_object *obj)
       obj->error = 1;
       return (RET_SUCCESS);
     }
-  tab = my_str_to_wordtab_space(str);
+  tab = str_to_wordtab(str, ' ');
   if (my_tab_length(tab) < 3)
     return (RET_FAIL);
   obj->width = my_getnbr(tab[0]);
