@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Wed Mar  1 11:09:56 2017 remy
+** Last update Wed Mar  1 15:17:18 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -62,5 +62,10 @@ int		my_strcmp(char *, char *);
 char		*my_strdup(char *);
 int		my_strlen(char *);
 char		*reverse(char *);
+bool		only_numbers(char *);
+int		my_tab_length(char **);
+int		print_tab(char **);
+int		biggest_line(char **);
+int		my_getnbr(const char *);
 
 #endif /* !TETRIS_H_ */
