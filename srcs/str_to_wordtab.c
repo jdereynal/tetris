@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Fri Jan 13 16:02:38 2017 jack
-** Last update Wed Mar  1 17:38:20 2017 jack
+** Last update Wed Mar  1 17:43:02 2017 jack
 */
 
 #include <stdlib.h>
@@ -55,7 +55,8 @@ int	get_word_count(char *str, char delimiter)
       	  while (str[i] != '\0' && str[i] != delimiter && i < length)
       	    i++;
       	}
-      i++;
+      if (str[i] != '\0')
+	i++;
     }
   return (word_count);
 }
