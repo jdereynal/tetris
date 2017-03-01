@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Feb 28 21:16:25 2017 remy
+** Last update Wed Mar  1 11:09:56 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -53,10 +53,10 @@ t_opt		check_args(int, char **);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
 char		*get_next_line(int);
-int		help_flag(void);
+int		help_flag(char *);
 t_list		*init_list();
 bool		is_help_flag(char *);
-int		launch_opt(t_opt);
+int		launch_opt(t_opt, char **);
 char		**my_str_to_wordtab_space(char *);
 int		my_strcmp(char *, char *);
 char		*my_strdup(char *);
