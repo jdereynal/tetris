@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Wed Mar  1 15:35:07 2017 jack
+** Last update Wed Mar  1 20:26:46 2017 remy
 */
 
 #include <stdlib.h>
@@ -25,6 +25,8 @@ int		main(int ac, char **av)
     launch_opt(opt, av);
   if ((my_list = get_tetriminos("tetriminos")) == NULL)
     return (RET_FAIL);
-  print_tetriminos(my_list);
+  sort_list(my_list);
+  my_show_list(my_list);
+  /* print_tetriminos(my_list); */
   return (RET_SUCCESS);
 }
