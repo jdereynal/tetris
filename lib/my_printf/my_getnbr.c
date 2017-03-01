@@ -1,11 +1,11 @@
 /*
 ** my_getnbr.c for my_getnbr in /home/remy.machado/Pool_Second_Try/CPool_Day04
-** 
+**
 ** Made by remy machado
 ** Login   <remy.machado@epitech.net>
-** 
+**
 ** Started on  Thu Oct 20 10:46:41 2016 remy machado
-** Last update Thu Feb 23 13:42:59 2017 remy
+** Last update Wed Mar  1 17:04:24 2017 jack
 */
 
 #include <stdbool.h>
