@@ -12,6 +12,9 @@ int	my_strlen(char *);
 
 int	is_neg(char *str, int i)
 {
+  int	size;
+
+  size = my_strlen(str);
   i -= 1;
   while (i >= 0)
     {
