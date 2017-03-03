@@ -26,7 +26,7 @@ int		main(int ac, char **av)
   if ((my_list = get_tetriminos("tetriminos")) == NULL)
     return (RET_FAIL);
   sort_list(my_list);
-  my_show_list(my_list);
-  /* print_tetriminos(my_list); */
+  //my_show_list(my_list);
+  print_tetriminos(my_list);
   return (RET_SUCCESS);
 }

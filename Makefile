@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Wed Mar  1 20:07:06 2017 remy
+## Last update Fri Mar  3 14:42:46 2017 jack
 ##
 
 CC	=	gcc
@@ -33,6 +33,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)sort_list.c		\
 		$(SRC)str_to_wordtab.c		\
 		$(SRC)tab_utils.c		\
+		$(SRC)normalize_shape.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 

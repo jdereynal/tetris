@@ -42,6 +42,7 @@ int		parse_tetrimino(int fd, t_object *obj)
       free(str);
     }
   obj->shape[i] = 0;
+  obj->shape = normalize_shape(obj->shape, obj->height);
   obj->error = 0;
   return (RET_SUCCESS);
 }

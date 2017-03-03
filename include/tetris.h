@@ -71,5 +71,8 @@ bool		only_numbers(char *);
 int		print_tab(char **);
 char		*reverse(char *);
 int		sort_list(t_list *);
+char		**normalize_shape(char **, int);
+char		**str_to_wordtab(char *, char);
+int		print_tetriminos(t_list *);
 
 #endif /* !TETRIS_H_ */
