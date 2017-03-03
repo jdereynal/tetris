@@ -8,6 +8,7 @@
 ** Last update Wed Mar  1 20:26:46 2017 remy
 */
 
+#include <ncurses.h>
 #include <stdlib.h>
 #include "my_printf.h"
 #include "tetris.h"
@@ -19,6 +20,7 @@ int		main(int ac, char **av)
   t_list	*tmp;
 
   opt = check_args(ac, av);
+   setupterm((char *)0, 1, (int *)0);
   if (opt == OPT_ERROR)
     return (RET_FAIL);
   else
@@ -26,7 +28,6 @@ int		main(int ac, char **av)
   if ((my_list = get_tetriminos("tetriminos")) == NULL)
     return (RET_FAIL);
   sort_list(my_list);
-  //my_show_list(my_list);
   print_tetriminos(my_list);
   return (RET_SUCCESS);
 }

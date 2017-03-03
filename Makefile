@@ -39,13 +39,12 @@ OBJS	=	$(SRCS:.c=.o)
 
 NAME	=	tetris
 
-CFLAGS	=	-I./include/
+CFLAGS	=	-I./include/ -lncurses
 
 # flags cancer CFLAGS	+=	-W -Wall -Wextra
 
 LDFLAGS =	-L./lib/gnl/ -lgnl
-
-LDFLAGS +=      -L./lib/my_printf/ -lmy_printf
+LDFLAGS +=      -L./lib/my_printf/ -lmy_printf -lncurses
 
 DEBUG	?=	1;
 
