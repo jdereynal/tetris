@@ -58,7 +58,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	make -C lib/my_printf/ all
-	$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)
+	$(CC) -o $(NAME) $(OBJS) $(LDFLAGS) $(CFLAGS)
 
 clean:
 	make -C lib/my_printf/ clean
