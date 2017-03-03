@@ -13,11 +13,12 @@
 #include "my_printf.h"
 #include "tetris.h"
 
-int		main(int ac, char **av)
+int		    main(int ac, char **av)
 {
-  t_opt		opt;
-  t_list	*my_list;
-  t_list	*tmp;
+  t_opt		    opt;
+  t_list	    *my_list;
+  t_key_binding	    *keys;
+  t_list	    *tmp;
 
   opt = check_args(ac, av);
    setupterm((char *)0, 1, (int *)0);
@@ -29,5 +30,6 @@ int		main(int ac, char **av)
     return (RET_FAIL);
   sort_list(my_list);
   print_tetriminos(my_list);
+  keys = key_init();
   return (RET_SUCCESS);
 }

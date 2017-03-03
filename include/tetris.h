@@ -23,12 +23,12 @@ typedef int		t_opt;
 
 typedef struct		s_key_binding
 {
-  int			key_drop;
-  int			key_left;
-  int			key_pause;
-  int			key_quit;
-  int			key_right;
-  int			key_turn;
+  char			*key_drop;
+  char			*key_left;
+  char			*key_pause;
+  char			*key_quit;
+  char			*key_right;
+  char			*key_turn;
 }			t_key_binding;
 
 typedef struct		s_object

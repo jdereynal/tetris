@@ -18,11 +18,11 @@ t_key_binding	*key_init(void)
 
   if ((key = malloc(sizeof(*key))) == NULL)
     return (NULL);
-  key->key_drop = KEY_DOWN;
-  key->key_left = KEY_LEFT;
-  key->key_pause = ' ';
-  key->key_quit = 'q';
-  key->key_right = KEY_RIGHT;
-  key->key_turn = KEY_UP;
+  key->key_drop = tigetstr("kcud1");
+  key->key_left = tigetstr("kcub1");
+  key->key_pause = my_strdup(" ");
+  key->key_quit = my_strdup("q");
+  key->key_right = tigetstr("kcua1");
+  key->key_turn = tigetstr("kcuu1");
   return (key);
 }
