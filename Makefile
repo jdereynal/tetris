@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Mon Mar  6 18:17:17 2017 jack
+## Last update Mon Mar  6 22:46:32 2017 jack
 ##
 
 CC	=	gcc
@@ -14,12 +14,14 @@ SRC	=	srcs/
 
 SRCS	=	$(SRC)check_args.c		\
 		$(SRC)concat.c			\
+		$(SRC)display.c			\
 		$(SRC)errors.c			\
 		$(SRC)extension.c		\
 		$(SRC)get_tetriminos.c		\
 		$(SRC)game_init.c		\
 		$(SRC)help_flag.c		\
 		$(SRC)is_help_flag.c		\
+		$(SRC)init_game_board.c		\
 		$(SRC)key_init.c		\
 		$(SRC)launch_opt.c		\
 		$(SRC)ll.c			\
@@ -33,6 +35,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)print_game.c		\
 		$(SRC)reverse.c			\
 		$(SRC)rotate.c			\
+		$(SRC)shape_to_int.c		\
 		$(SRC)sort_list.c		\
 		$(SRC)str_to_wordtab.c		\
 		$(SRC)tab_utils.c		\

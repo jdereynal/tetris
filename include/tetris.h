@@ -5,13 +5,14 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Mon Mar  6 18:24:39 2017 jack
+** Last update Mon Mar  6 22:06:55 2017 jack
 */
 
 #ifndef TETRIS_H_
 # define TETRIS_H_
 
 #include <stdbool.h>
+#include <ncurses.h>
 
 # define HELP_FILENAME	"help_file"
 # define OPT_ERROR	84
@@ -27,6 +28,8 @@ typedef struct		s_game
   int			level;
   int			size_x;
   int			size_y;
+  WINDOW		*window;
+  int			**board;
 }			t_game;
 
 typedef struct		s_key_binding

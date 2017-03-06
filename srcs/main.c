@@ -5,11 +5,11 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Mon Mar  6 18:19:28 2017 jack
+** Last update Mon Mar  6 23:02:59 2017 jack
 */
 
-#include <ncurses.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "my_printf.h"
 #include "tetris.h"
 
@@ -39,5 +39,6 @@ int			main(int ac, char **av)
   print_keys(keys);
   print_game(game);
   print_tetriminos(my_list);
+  //init_display(game, my_list);
   return (RET_SUCCESS);
 }
