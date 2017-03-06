@@ -28,6 +28,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)my_strlen.c		\
 		$(SRC)my_strncmp.c		\
 		$(SRC)print_tetriminos.c	\
+		$(SRC)print_keys.c		\
 		$(SRC)reverse.c			\
 		$(SRC)rotate.c			\
 		$(SRC)sort_list.c		\

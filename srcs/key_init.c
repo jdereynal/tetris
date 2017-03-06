@@ -22,7 +22,7 @@ t_key_binding	*key_init(void)
   key->key_left = tigetstr("kcub1");
   key->key_pause = my_strdup(" ");
   key->key_quit = my_strdup("q");
-  key->key_right = tigetstr("kcua1");
+  key->key_right = tigetstr("kcuf1");
   key->key_turn = tigetstr("kcuu1");
   return (key);
 }
