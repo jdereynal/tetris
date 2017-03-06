@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Mon Mar  6 17:50:54 2017 jack
+## Last update Mon Mar  6 18:17:17 2017 jack
 ##
 
 CC	=	gcc
@@ -30,6 +30,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)my_strncmp.c		\
 		$(SRC)print_tetriminos.c	\
 		$(SRC)print_keys.c		\
+		$(SRC)print_game.c		\
 		$(SRC)reverse.c			\
 		$(SRC)rotate.c			\
 		$(SRC)sort_list.c		\

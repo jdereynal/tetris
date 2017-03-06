@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Mon Mar  6 17:55:06 2017 jack
+** Last update Mon Mar  6 18:19:28 2017 jack
 */
 
 #include <ncurses.h>
@@ -37,6 +37,7 @@ int			main(int ac, char **av)
   if ((keys = key_init()) == NULL)
     return (84);
   print_keys(keys);
+  print_game(game);
   print_tetriminos(my_list);
   return (RET_SUCCESS);
 }
