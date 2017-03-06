@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Wed Mar  1 20:07:34 2017 remy
+** Last update Mon Mar  6 18:24:39 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -63,10 +63,13 @@ t_opt		check_args(int, char **);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
 char		*get_next_line(int);
+t_game		*game_init();
 int		help_flag(char *);
 t_list		*init_list(void);
 bool		is_help_flag(char *);
+t_key_binding	*key_init();
 int		launch_opt(t_opt, char **);
+int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);
 char		**my_str_to_wordtab_space(char *);
@@ -82,7 +85,7 @@ int		sort_list(t_list *);
 char		**normalize_shape(char **, int);
 char		**str_to_wordtab(char *, char);
 int		print_tetriminos(t_list *);
-t_key_binding	*key_init();
 int		print_keys(t_key_binding *);
+int		print_game(t_game *);
 
 #endif /* !TETRIS_H_ */
