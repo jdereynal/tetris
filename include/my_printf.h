@@ -37,7 +37,7 @@ char	*my_evil_str(char *str);
 int	my_fact_it(int nbr);
 int	my_fact_rec(int nbr);
 int	my_find_prime_sup(int nbr);
-int	my_getnbr(const char *str);
+int	my_getnbr(char *str);
 int	my_getnbr_base(char *str, char *base);
 char	my_init_printf(const char *str, int *i, int *stop, va_list ap);
 char	my_init_printf2(const char *str, int *i, int *stop, va_list ap);

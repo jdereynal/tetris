@@ -59,7 +59,7 @@ int		help_flag(char *);
 t_list		*init_list(void);
 bool		is_help_flag(char *);
 int		launch_opt(t_opt, char **);
-int		my_getnbr(const char *);
+int		my_getnbr(char *);
 void		my_show_list(t_list *);
 char		**my_str_to_wordtab_space(char *);
 int		my_strcmp(char *, char *);
