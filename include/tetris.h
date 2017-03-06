@@ -21,6 +21,14 @@
 
 typedef int		t_opt;
 
+typedef struct		s_game
+{
+  int			yes;
+  int			level;
+  int			size_x;
+  int			size_y;
+}			t_game;
+
 typedef struct		s_key_binding
 {
   char			*key_drop;

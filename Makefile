@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Fri Mar  3 14:42:46 2017 jack
+## Last update Mon Mar  6 17:50:54 2017 jack
 ##
 
 CC	=	gcc
@@ -17,6 +17,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)errors.c			\
 		$(SRC)extension.c		\
 		$(SRC)get_tetriminos.c		\
+		$(SRC)game_init.c		\
 		$(SRC)help_flag.c		\
 		$(SRC)is_help_flag.c		\
 		$(SRC)key_init.c		\
