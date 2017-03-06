@@ -59,7 +59,7 @@ int		help_flag(char *);
 t_list		*init_list(void);
 bool		is_help_flag(char *);
 int		launch_opt(t_opt, char **);
-int		my_getnbr(char *);
+int		my_getnbr(const char *);
 void		my_show_list(t_list *);
 char		**my_str_to_wordtab_space(char *);
 int		my_strcmp(char *, char *);
@@ -74,5 +74,7 @@ int		sort_list(t_list *);
 char		**normalize_shape(char **, int);
 char		**str_to_wordtab(char *, char);
 int		print_tetriminos(t_list *);
+t_key_binding	*key_init();
+int		print_keys(t_key_binding *);
 
 #endif /* !TETRIS_H_ */
