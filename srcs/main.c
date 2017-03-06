@@ -13,6 +13,8 @@
 #include "my_printf.h"
 #include "tetris.h"
 
+int		    setupterm(char *, int, int *);
+
 int		    main(int ac, char **av)
 {
   t_opt		    opt;
