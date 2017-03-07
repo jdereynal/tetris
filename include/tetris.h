@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 12:25:26 2017 remy
+** Last update Tue Mar  7 15:16:48 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -60,6 +60,7 @@ typedef struct		s_list
 }			t_list;
 
 int		add_elem_to_list(t_object, t_list *);
+int		**add_shape(t_game *, t_list *);
 int		biggest_line(char **);
 char		*concatenate(char *, char *);
 t_opt		check_args(int, char **);
@@ -67,8 +68,11 @@ bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
 char		*get_next_line(int);
 t_game		*game_init();
+int		has_moving_shape(int **);
 int		help_flag(char *);
 t_list		*init_list(void);
+int		init_display(t_game *, t_list *);
+int		**init_game_board(t_game *);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
 int		launch_opt(t_opt, char **);
@@ -90,5 +94,6 @@ char		**str_to_wordtab(char *, char);
 int		print_tetriminos(t_list *);
 int		print_keys(t_key_binding *);
 int		print_game(t_game *);
+int		**update_board(t_game *);
 
 #endif /* !TETRIS_H_ */
