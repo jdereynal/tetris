@@ -5,15 +5,17 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Mon Mar  6 22:46:32 2017 jack
+## Last update Tue Mar  7 13:41:48 2017 jack
 ##
 
 CC	=	gcc
 
 SRC	=	srcs/
 
-SRCS	=	$(SRC)check_args.c		\
+SRCS	=	$(SRC)add_shape.c		\
+		$(SRC)check_args.c		\
 		$(SRC)concat.c			\
+		$(SRC)colors.c			\
 		$(SRC)display.c			\
 		$(SRC)errors.c			\
 		$(SRC)extension.c		\
@@ -26,6 +28,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)launch_opt.c		\
 		$(SRC)ll.c			\
 		$(SRC)main.c			\
+		$(SRC)moving_shape.c		\
 		$(SRC)my_strcmp.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\
@@ -39,6 +42,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)sort_list.c		\
 		$(SRC)str_to_wordtab.c		\
 		$(SRC)tab_utils.c		\
+		$(SRC)update_board.c		\
 		$(SRC)normalize_shape.c		\
 
 OBJS	=	$(SRCS:.c=.o)
