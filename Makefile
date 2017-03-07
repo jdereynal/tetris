@@ -12,8 +12,9 @@ CC	=	gcc -g3
 SRC	=	srcs/
 
 SRCS	=	$(SRC)add_shape.c		\
-		$(SRC)change_keys.c		\
 		$(SRC)check_args.c		\
+		$(SRC)change_keys.c		\
+		$(SRC)change_settings.c		\
 		$(SRC)concat.c			\
 		$(SRC)colors.c			\
 		$(SRC)display.c			\
@@ -31,6 +32,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)main.c			\
 		$(SRC)moving_shape.c		\
 		$(SRC)move_shape.c		\
+		$(SRC)my_str_isnum.c		\
 		$(SRC)my_strcmp.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\

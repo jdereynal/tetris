@@ -5,7 +5,7 @@
 ## Login   <remy.machado@epitech.net>
 ## 
 ## Started on  Wed Nov  9 18:04:12 2016 remy machado
-## Last update Mon Mar  6 18:25:02 2017 jack
+## Last update Tue Mar  7 18:07:09 2017 remy
 ##
 
 CC	= 	gcc
@@ -58,7 +58,7 @@ OBJS	=	$(SRCSP:.c=.o)
 
 NAME	=	libmy_printf.a
 
-CFLAGS	+=	-I../../include
+CFLAGS	=	-I../../include
 
 all:	$(NAME)
 

@@ -5,7 +5,7 @@
 ** Login   <remy.machado@epitech.net>
 ** 
 ** Started on  Tue Oct 18 14:53:02 2016 remy machado
-** Last update Thu Feb 23 14:36:50 2017 remy
+** Last update Tue Mar  7 18:01:50 2017 remy
 */
 
 #ifndef MY_PRINTF_H_
@@ -67,7 +67,6 @@ int	my_square_root(int nbr);
 int	my_str_got_num(char *str);
 int	my_str_isalpha(char *str);
 int	my_str_islowcase(char *str);
-bool	my_str_isnum(char *str);
 int	my_str_isprintable(char *str);
 int	my_str_isupcase(char *str);
 char	**my_str_to_wordtab(char *str);

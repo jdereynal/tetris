@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 17:56:01 2017 jack
-** Last update Mon Mar  6 18:18:12 2017 jack
+** Last update Tue Mar  7 18:54:23 2017 remy
 */
 
 #include "tetris.h"
@@ -13,10 +13,10 @@
 
 int		print_game(t_game *game)
 {
-  if (game->yes == 1)
-    my_printf("Next : Yes\n");
-  if (game->yes == 0)
-    my_printf("Next : No\n");
+  if (game->hide_next == true)
+    my_printf("Next : Do not show\n");
+  if (game->hide_next == false)
+    my_printf("Next : Show it\n");
   my_printf("Level : %d\n", game->level);
   my_printf("Size : %d*%d\n", game->size_x, game->size_y);
   return (0);

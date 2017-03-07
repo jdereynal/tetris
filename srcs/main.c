@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Tue Mar  7 15:02:45 2017 remy
+** Last update Tue Mar  7 18:53:47 2017 remy
 */
 
 #include <stdlib.h>
@@ -32,12 +32,20 @@ int			main(int ac, char **av)
   sort_list(my_list);
   if ((keys = key_init()) == NULL)
     return (84);
+  my_printf("\nAvant :\n");
+  print_game(game);
+  my_printf("\n\n");
+  if (change_settings(av, game) == RET_FAIL)
+    return (RET_FAIL);
+  /* change_keys(av, keys); */
   if (opt == OPT_ERROR)
     return (RET_FAIL);
   else
     launch_opt(opt, av, keys);
   print_keys(keys);
+  my_printf("\nAprès :\n");
   print_game(game);
+  my_printf("\n\n");
   print_tetriminos(my_list);
   init_display(game, my_list);
   return (RET_SUCCESS);

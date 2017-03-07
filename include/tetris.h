@@ -5,13 +5,14 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 15:32:01 2017 remy
+** Last update Tue Mar  7 18:33:42 2017 remy
 */
 
 #ifndef TETRIS_H_
 # define TETRIS_H_
 
 #include <stdbool.h>
+#include <stdlib.h>
 #include <ncurses.h>
 
 # define HELP_FILENAME	"help_file"
@@ -25,7 +26,7 @@ typedef int		t_opt;
 
 typedef struct		s_game
 {
-  int			yes;
+  bool			hide_next;
   int			level;
   int			size_x;
   int			size_y;
@@ -63,7 +64,8 @@ typedef struct		s_list
 int		add_elem_to_list(t_object, t_list *);
 int		**add_shape(t_game *, t_list *);
 int		biggest_line(char **);
-int		change_keys(t_key_binding *keys);
+int		change_keys(char **, t_key_binding *);
+int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
 t_opt		check_args(int, char **);
 bool		extension(char *, char *);
@@ -78,11 +80,12 @@ int		**init_game_board(t_game *);
 bool		is_debug_flag(char **);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
-int		launch_opt(t_opt, char **, t_key_binding *keys);
+int		launch_opt(t_opt, char **, t_key_binding *);
 int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);
 char		**my_str_to_wordtab_space(char *);
+int		my_str_isnum(char *);
 int		my_strcmp(char *, char *);
 char		*my_strdup(char *);
 int		my_strlen(char *);

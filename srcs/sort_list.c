@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Wed Mar  1 16:52:50 2017 jack
-** Last update Wed Mar  1 20:26:21 2017 remy
+** Last update Tue Mar  7 16:52:35 2017 remy
 */
 
 #include <stdlib.h>
@@ -39,13 +39,8 @@ void		sort_objs(t_object *obj_array, int nb_object)
       index = (-1);
       while (obj_array[++index + 1].name != NULL)
 	{
-	  if (my_strlen(obj_array[index].name) >
-	      my_strlen(obj_array[index + 1].name))
-	    length = my_strlen(obj_array[index].name);
-	  else
-	    length = my_strlen(obj_array[index + 1].name);
-	  if (my_strncmp(obj_array[index].name,
-			 obj_array[index + 1].name, length) > 0)
+	  if (my_strcmp(obj_array[index].name,
+			obj_array[index + 1].name) > 0)
 	    {
 	      tmp = obj_array[index];
 	      obj_array[index] = obj_array[index + 1];
