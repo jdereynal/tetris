@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 15:27:37 2017 remy
+** Last update Tue Mar  7 15:30:57 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -77,7 +77,7 @@ int		init_display(t_game *, t_list *);
 int		**init_game_board(t_game *);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
-int		launch_opt(t_opt, char **);
+int		launch_opt(t_opt, char **, t_key_binding *keys);
 int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);
