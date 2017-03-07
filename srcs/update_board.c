@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar  7 12:12:21 2017 jack
-** Last update Tue Mar  7 14:48:42 2017 jack
+** Last update Tue Mar  7 15:49:06 2017 jack
 */
 
 #include <stdlib.h>
@@ -45,13 +45,13 @@ int		**update_board(t_game *game)
   i = 0;
   while (game->board[i])
     i++;
-  i -= 1;
+  i--;
   while (i >= 0)
     {
       j = 0;
       while (game->board[i][j] != -1)
 	{
-	  if (game->board[i][j] != 0 && game->board[i + 1] != 0)
+	  if (game->board[i][j] >= 1000 && game->board[i + 1] != 0)
 	    if (game->board[i + 1][j] == 0)
 	      {
 		game->board[i + 1][j] = game->board[i][j];

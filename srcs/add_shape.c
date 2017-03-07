@@ -5,10 +5,30 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar  7 11:53:08 2017 jack
-** Last update Tue Mar  7 13:59:41 2017 jack
+** Last update Tue Mar  7 16:43:16 2017 jack
 */
 
+#include <time.h>
+#include <stdlib.h>
 #include "tetris.h"
+
+t_list		*get_shape(t_list *tetriminos)
+{
+  int		i;
+  int		count;
+  t_list	*tmp;
+
+  i = get_tetrimino_count(tetriminos);
+  srand(time(NULL));
+  count = rand() % i + 1;
+  tmp = tetriminos->next;
+  while (count && tmp != NULL)
+    {
+      tmp = tmp->next;
+      count--;
+    }
+  return (tmp);
+}
 
 int		**add_shape(t_game *game, t_list *tetriminos)
 {
@@ -16,8 +36,8 @@ int		**add_shape(t_game *game, t_list *tetriminos)
   int		i;
   int		j;
 
-  tmp = tetriminos->next;
-  tmp = tmp->next->next;
+  tmp = tetriminos->next->next;
+  //tmp = get_shape(tetriminos);
   i = 0;
   while (tmp->obj.shape[i])
     {

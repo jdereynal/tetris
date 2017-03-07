@@ -7,7 +7,7 @@
 ## Started on  Tue Feb 21 15:06:41 2017 remy
 ##
 
-CC	=	gcc
+CC	=	gcc -g3
 
 SRC	=	srcs/
 
