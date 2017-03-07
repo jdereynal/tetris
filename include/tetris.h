@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 18:33:42 2017 remy
+** Last update Tue Mar  7 19:55:12 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -16,6 +16,7 @@
 #include <ncurses.h>
 
 # define HELP_FILENAME	"help_file"
+# define NB_OF_KEYS	6
 # define OPT_DEBUG	2
 # define OPT_ERROR	84
 # define OPT_HELP	1

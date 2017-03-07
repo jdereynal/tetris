@@ -5,12 +5,153 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:14:15 2017 remy
-** Last update Tue Mar  7 16:15:57 2017 remy
+** Last update Tue Mar  7 22:50:57 2017 remy
 */
 
 #include "tetris.h"
 
+#define ANY	0
+#define KD	1
+#define KL	2
+#define KP	3
+#define KQ	4
+#define KR	5
+#define KT	6
+
+char	*send_me_key(int index, t_key_binding *keys)
+{ 
+  if (index == 0)
+      return (keys->key_drop);
+  if (index == 1)
+      return (keys->key_left);
+  if (index == 2)
+      return (keys->key_pause);
+  if (index == 3)
+      return (keys->key_quit);
+  if (index == 4)
+      return (keys->key_right);
+  if (index == 5)
+      return (keys->key_turn);
+  return (NULL);
+}
+
+void	attribute_unknown_seq(int index, char *seq, t_key_binding *keys)
+{ 
+  if (index == 0)
+    keys->key_drop = seq;
+  if (index == 1)
+      keys->key_left = seq;
+  if (index == 2)
+      keys->key_pause = seq;
+  if (index == 3)
+      keys->key_quit = seq;
+  if (index == 4)
+      keys->key_right = seq;
+  if (index == 5)
+      keys->key_turn = seq;
+}
+
+void	attribute_key(int index, int index_key, t_key_binding *keys)
+{ 
+  if (index == 0)
+    keys->key_drop = send_me_key(index_key, keys);
+  if (index == 1)
+      keys->key_left = send_me_key(index_key, keys);
+  if (index == 2)
+      keys->key_pause = send_me_key(index_key, keys);
+  if (index == 3)
+      keys->key_quit = send_me_key(index_key, keys);
+  if (index == 4)
+      keys->key_right = send_me_key(index_key, keys);
+  if (index == 5)
+      keys->key_turn = send_me_key(index_key, keys);
+}
+
+/* char	*malloc_the_right_key(int index, t_key_binding *keys) */
+/* { */
+/*   char	*str; */
+  
+/*   if (index == 0) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_drop) + 1)) == NULL) */
+/*       return (NULL); */
+/*   if (index == 1) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_left) + 1)) == NULL) */
+/*       return (NULL); */
+/*   if (index == 2) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_pause) + 1)) == NULL) */
+/*       return (NULL); */
+/*   if (index == 3) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_quit) + 1)) == NULL) */
+/*       return (NULL); */
+/*   if (index == 4) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_right) + 1)) == NULL) */
+/*       return (NULL); */
+/*   if (index == 5) */
+/*     if ((str = malloc(sizeof(char) * my_strlen(keys->key_turn) + 1)) == NULL) */
+/*       return (NULL); */
+/*   return (str); */
+/* } */
+
+/* char	**create_keys_copy(t_key_binding *keys) */
+/* { */
+/*   int	index; */
+/*   char	**cpy; */
+
+/*   index = 0; */
+/*   if ((cpy = malloc(sizeof(char *) * (NB_OF_KEYS + 1))) == NULL) */
+/*     return (NULL); */
+/*   cpy[index] = NULL; */
+/*   while (index != NB_OF_KEYS) */
+/*     { */
+/*       if ((cpy[index] = malloc_the_right_key(index, keys)) == NULL) */
+/* 	return (NULL); */
+/*       cpy[index] = send_me_key(index, keys); */
+/*       ++index; */
+/*     } */
+/*   return (cpy); */
+/* } */
+
+int	which_key(char *key)
+{
+  if (!my_strcmp(key, "-kd"))
+    return (KD);
+  if (!my_strcmp(key, "-kl"))
+    return (KL);
+  if (!my_strcmp(key, "-kp"))
+    return (KP);
+  if (!my_strcmp(key, "-kq"))
+    return (KQ);
+  if (!my_strcmp(key, "-kr"))
+    return (KR);
+  if (!my_strcmp(key, "-kt"))
+    return (KT);
+  return (ANY);
+}
+
 int	change_keys(char **argv, t_key_binding *keys)
 {
+  int	i;
+  int	index_key;
+  int	index_key_2;
+
+  i = 0;
+  while (argv[i] != NULL)
+    {
+      if (((index_key = which_key(argv[i])) > 0) &&
+	  (argv[i + 1] == NULL))
+	return (RET_FAIL);
+      index_key_2 = which_key(argv[i + 1]);
+      if ((index_key > 0) && (index_key_2 > 0))
+	{
+	  attribute_key((index_key - 1), (index_key_2 - 1), keys);
+	  ++i;
+	}
+      else if ((index_key > 0) && ((index_key_2 = which_key(argv[i + 1]) == 0)))
+	{
+	  attribute_unknown_seq((index_key - 1), argv[i + 1], keys);
+	  ++i;
+        }
+      ++i;
+    }
   return (RET_SUCCESS);
 }
