@@ -5,7 +5,7 @@
 ## Login   <remy@epitech.net>
 ##
 ## Started on  Tue Feb 21 15:06:41 2017 remy
-## Last update Mon Mar  6 22:46:32 2017 jack
+## Last update Tue Mar  7 11:51:19 2017 remy
 ##
 
 CC	=	gcc
@@ -30,6 +30,7 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\
 		$(SRC)my_strncmp.c		\
+		$(SRC)normalize_shape.c		\
 		$(SRC)print_tetriminos.c	\
 		$(SRC)print_keys.c		\
 		$(SRC)print_game.c		\
@@ -39,7 +40,6 @@ SRCS	=	$(SRC)check_args.c		\
 		$(SRC)sort_list.c		\
 		$(SRC)str_to_wordtab.c		\
 		$(SRC)tab_utils.c		\
-		$(SRC)normalize_shape.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 
