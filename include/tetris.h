@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 12:25:26 2017 remy
+** Last update Tue Mar  7 15:19:59 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -15,6 +15,7 @@
 #include <ncurses.h>
 
 # define HELP_FILENAME	"help_file"
+# define OPT_DEBUG	2
 # define OPT_ERROR	84
 # define OPT_HELP	1
 # define RET_FAIL	84
@@ -62,6 +63,7 @@ typedef struct		s_list
 int		add_elem_to_list(t_object, t_list *);
 int		biggest_line(char **);
 char		*concatenate(char *, char *);
+int		change_keys(t_key_binding *keys);
 t_opt		check_args(int, char **);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
@@ -69,9 +71,10 @@ char		*get_next_line(int);
 t_game		*game_init();
 int		help_flag(char *);
 t_list		*init_list(void);
+bool		is_debug_flag(char **);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
-int		launch_opt(t_opt, char **);
+int		launch_opt(t_opt, char **, t_key_binding *);
 int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);

@@ -12,6 +12,7 @@ CC	=	gcc
 SRC	=	srcs/
 
 SRCS	=	$(SRC)add_shape.c		\
+		$(SRC)change_keys.c		\
 		$(SRC)check_args.c		\
 		$(SRC)concat.c			\
 		$(SRC)colors.c			\
@@ -21,6 +22,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)get_tetriminos.c		\
 		$(SRC)game_init.c		\
 		$(SRC)help_flag.c		\
+		$(SRC)is_debug_flag.c		\
 		$(SRC)is_help_flag.c		\
 		$(SRC)init_game_board.c		\
 		$(SRC)key_init.c		\
