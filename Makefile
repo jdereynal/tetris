@@ -30,6 +30,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)ll.c			\
 		$(SRC)main.c			\
 		$(SRC)moving_shape.c		\
+		$(SRC)move_shape.c		\
 		$(SRC)my_strcmp.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\
