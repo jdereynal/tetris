@@ -17,6 +17,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)change_settings.c		\
 		$(SRC)concat.c			\
 		$(SRC)colors.c			\
+		$(SRC)debug_flag.c		\
 		$(SRC)display.c			\
 		$(SRC)errors.c			\
 		$(SRC)extension.c		\
@@ -27,6 +28,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)is_help_flag.c		\
 		$(SRC)init_game_board.c		\
 		$(SRC)key_init.c		\
+		$(SRC)key_transactions.c	\
 		$(SRC)launch_opt.c		\
 		$(SRC)ll.c			\
 		$(SRC)main.c			\

@@ -5,16 +5,22 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Feb 28 11:48:31 2017 remy
-** Last update Tue Mar  7 15:02:12 2017 remy
+** Last update Wed Mar  8 15:10:01 2017 remy
 */
 
 #include "tetris.h"
 
-int	launch_opt(t_opt opt, char **argv, t_key_binding *keys)
+int	launch_opt(t_opt opt, char **argv,
+		   t_key_binding *keys, t_game *game)
 {
   if (opt == OPT_HELP)
     return (help_flag(argv[0]));
-  /* else if (opt == OPT_DEBUG) */
-  /*   return (debug_flag()); */
+  else
+    {
+      if (change_settings(argv, game) == RET_FAIL)
+	return (RET_FAIL);
+      if (change_keys(argv, keys) == RET_FAIL)
+	return (RET_FAIL);
+    }
   return (RET_SUCCESS);
 }

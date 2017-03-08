@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar  7 19:55:12 2017 remy
+** Last update Wed Mar  8 15:10:58 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -64,11 +64,14 @@ typedef struct		s_list
 
 int		add_elem_to_list(t_object, t_list *);
 int		**add_shape(t_game *, t_list *);
+void		attribute_key(int, int, t_key_binding *);
+void		attribute_unknown_seq(int, char *, t_key_binding *);
 int		biggest_line(char **);
 int		change_keys(char **, t_key_binding *);
 int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
 t_opt		check_args(int, char **);
+int		debug_flag(t_key_binding *, t_game *, t_list *);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
 char		*get_next_line(int);
@@ -81,7 +84,7 @@ int		**init_game_board(t_game *);
 bool		is_debug_flag(char **);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
-int		launch_opt(t_opt, char **, t_key_binding *);
+int		launch_opt(t_opt, char **, t_key_binding *, t_game *);
 int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);
@@ -101,6 +104,7 @@ char		**str_to_wordtab(char *, char);
 int		print_tetriminos(t_list *);
 int		print_keys(t_key_binding *);
 int		print_game(t_game *);
+char		*send_me_key(int, t_key_binding *);
 int		**update_board(t_game *);
 
 #endif /* !TETRIS_H_ */
