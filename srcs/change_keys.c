@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:14:15 2017 remy
-** Last update Wed Mar  8 16:15:10 2017 remy
+** Last update Wed Mar  8 17:30:02 2017 jack
 */
 
 #include "tetris.h"
@@ -81,17 +81,17 @@ int	which_key(char *key)
 
 int	index_my_key(int i, int *index_key, char **argv)
 {
-      if (((*index_key = which_key(argv[i])) > 0) &&
-      	  (argv[i + 1] == NULL))
-      	return (RET_FAIL);
-      if (((*index_key = which_key(argv[i])) == 0) &&
-      	  (argv[i + 1] == NULL))
-	return (-1);
-      if (((*index_key = which_key(argv[i])) == 0) &&
-      	  (argv[i + 1] != NULL))
-	return (-1);
-      else
-	return (RET_SUCCESS);
+  if (((*index_key = which_key(argv[i])) > 0) &&
+      (argv[i + 1] == NULL))
+    return (RET_FAIL);
+  if (((*index_key = which_key(argv[i])) == 0) &&
+      (argv[i + 1] == NULL))
+    return (-1);
+  if (((*index_key = which_key(argv[i])) == 0) &&
+      (argv[i + 1] != NULL))
+    return (-1);
+  else
+    return (RET_SUCCESS);
 }
 
 int	change_keys(char **argv, t_key_binding *keys)
