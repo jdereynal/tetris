@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:14:15 2017 remy
-** Last update Wed Mar  8 14:31:00 2017 remy
+** Last update Wed Mar  8 15:47:18 2017 remy
 */
 
 #include "tetris.h"
@@ -79,24 +79,35 @@ int	which_key(char *key)
   return (ANY);
 }
 
+int	index_my_key(int i, int *index_key, char **argv)
+{
+      if (((*index_key = which_key(argv[i])) > 0) &&
+      	  (argv[i + 1] == NULL))
+      	return (RET_FAIL);
+      if (((*index_key = which_key(argv[i])) == 0) &&
+      	  (argv[i + 1] == NULL))
+	return (RET_SUCCESS);
+      if (((*index_key = which_key(argv[i])) == 0) &&
+      	  (argv[i + 1] != NULL))
+	return (RET_SUCCESS);
+}
+
 int	change_keys(char **argv, t_key_binding *keys)
 {
   int	i;
   int	index_key;
   int	index_key_2;
 
-  i = 0;
+  i = 1;
   while (argv[i] != NULL)
     {
-      if (((index_key = which_key(argv[i])) > 0) &&
-	  (argv[i + 1] == NULL))
+      if (index_my_key(i, &index_key, argv) == RET_FAIL)
 	return (RET_FAIL);
-      if (((index_key = which_key(argv[i])) == 0) &&
-      	  (argv[i + 1] != NULL))
-      	{
-      	  ++i;
-      	  continue;
-      	}
+      else
+	{
+	  ++i;
+	  continue ;
+	}
       index_key_2 = which_key(argv[i + 1]);
       if ((index_key > 0) && (index_key_2 > 0))
 	attribute_key((index_key - 1), (index_key_2 - 1), keys);

@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:39:24 2017 remy
-** Last update Tue Mar  7 18:52:08 2017 remy
+** Last update Wed Mar  8 15:28:05 2017 remy
 */
 
 #include "my_printf.h"
@@ -56,7 +56,7 @@ int	change_settings(char **argv, t_game *game)
 {
   int	i;
 
-  i = 0;
+  i = 1;
   while (argv[i] != NULL)
     {
       if (!my_strcmp(argv[i], "-w") || !my_strcmp(argv[i], "--without-next"))
