@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:14:15 2017 remy
-** Last update Wed Mar  8 17:30:02 2017 jack
+** Last update Thu Mar  9 16:28:50 2017 remy
 */
 
 #include "tetris.h"
@@ -17,6 +17,12 @@
 #define KQ	4
 #define KR	5
 #define KT	6
+#define LKD	7
+#define LKL	8
+#define LKP	9
+#define LKQ	10
+#define LKR	11
+#define LKT	12
 
 /* char	*malloc_the_right_key(int index, t_key_binding *keys) */
 /* { */
@@ -62,6 +68,23 @@
 /*   return (cpy); */
 /* } */
 
+int	which_long_key(char *key)
+{
+  if (!my_strncmp(key, "--key-drop=", 11))
+    return (LKD);
+  if (!my_strncmp(key, "--key-left=", 11))
+    return (LKL);
+  if (!my_strncmp(key, "--key-pause=", 12))
+    return (LKP);
+  if (!my_strncmp(key, "--key-quit=", 11))
+    return (LKQ);
+  if (!my_strncmp(key, "--key-right=", 12))
+    return (LKR);
+  if (!my_strncmp(key, "--key-turn=", 11))
+    return (LKT);
+  return (ANY);
+}
+
 int	which_key(char *key)
 {
   if (!my_strcmp(key, "-kd"))
@@ -76,6 +99,8 @@ int	which_key(char *key)
     return (KR);
   if (!my_strcmp(key, "-kt"))
     return (KT);
+  if (which_long_key(key) != 0)
+    return (which_long_key(key));
   return (ANY);
 }
 
@@ -94,6 +119,27 @@ int	index_my_key(int i, int *index_key, char **argv)
     return (RET_SUCCESS);
 }
 
+int	change_keys_2(char **argv, t_key_binding *keys,
+		      int *index_key, int *i)
+{
+  int	index_key_2;
+  
+  if (index_my_key(*i, index_key, argv) == RET_FAIL)
+    return (RET_FAIL);
+  else if (index_my_key(*i, index_key, argv) == (-1))
+    {
+      *i = *i + 1;
+      return (RET_SUCCESS);
+    }
+  index_key_2 = which_key(argv[*i + 1]);
+  if ((*index_key > 0) && (index_key_2 > 0))
+    return (RET_FAIL);
+  else if ((*index_key > 0) && ((index_key_2 = which_key(argv[*i + 1]) == 0)))
+    attribute_unknown_seq((*index_key - 1), argv[*i + 1], keys);
+  *i += 2;
+  return (RET_SUCCESS);
+}
+
 int	change_keys(char **argv, t_key_binding *keys)
 {
   int	i;
@@ -103,19 +149,34 @@ int	change_keys(char **argv, t_key_binding *keys)
   i = 1;
   while (argv[i] != NULL)
     {
-      if (index_my_key(i, &index_key, argv) == RET_FAIL)
-	return (RET_FAIL);
-      else if (index_my_key(i, &index_key, argv) == (-1))
+      index_key = which_key(argv[i]);
+      if ((index_key > 6) && ((index_key == LKP) || (index_key == LKR)))
 	{
+	  attribute_unknown_seq((index_key - 7), (argv[i] + 12), keys);
 	  ++i;
 	  continue ;
 	}
-      index_key_2 = which_key(argv[i + 1]);
-      if ((index_key > 0) && (index_key_2 > 0))
+      if (index_key > 6)
+	{
+	  attribute_unknown_seq((index_key - 7), (argv[i] + 11), keys);
+	  ++i;
+	  continue ;
+	}
+      if (change_keys_2(argv, keys, &index_key, &i) == RET_FAIL)
 	return (RET_FAIL);
-      else if ((index_key > 0) && ((index_key_2 = which_key(argv[i + 1]) == 0)))
-	attribute_unknown_seq((index_key - 1), argv[i + 1], keys);
-      i += 2;
+      /* if (index_my_key(i, &index_key, argv) == RET_FAIL) */
+      /* 	return (RET_FAIL); */
+      /* else if (index_my_key(i, &index_key, argv) == (-1)) */
+      /* 	{ */
+      /* 	  ++i; */
+      /* 	  continue ; */
+      /* 	} */
+      /* index_key_2 = which_key(argv[i + 1]); */
+      /* if ((index_key > 0) && (index_key_2 > 0)) */
+      /* 	return (RET_FAIL); */
+      /* else if ((index_key > 0) && ((index_key_2 = which_key(argv[i + 1]) == 0))) */
+      /* 	attribute_unknown_seq((index_key - 1), argv[i + 1], keys); */
+      /* i += 2; */
     }
   return (RET_SUCCESS);
 }
