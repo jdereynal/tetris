@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Fri Mar 10 12:07:55 2017 remy
-** Last update Fri Mar 10 12:23:38 2017 remy
+** Last update Fri Mar 10 12:35:59 2017 remy
 */
 
 #include "tetris.h"
@@ -15,17 +15,17 @@ int	how_many_same_key(t_key_binding *keys, char *cmpkey)
   int	how_many;
 
   how_many = 0;
-  if (!my_strcmp(keys->key_drop, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_drop, cmpkey))
     ++how_many;
-  if (!my_strcmp(keys->key_left, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_left, cmpkey))
     ++how_many;
-  if (!my_strcmp(keys->key_pause, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_pause, cmpkey))
     ++how_many;
-  if (!my_strcmp(keys->key_quit, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_quit, cmpkey))
     ++how_many;
-  if (!my_strcmp(keys->key_right, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_right, cmpkey))
     ++how_many;
-  if (!my_strcmp(keys->key_turn, cmpkey))
+  if (!my_strcmp_no_bz(keys->key_turn, cmpkey))
     ++how_many;
   return (how_many);
 }

@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Fri Mar 10 12:24:28 2017 remy
+** Last update Fri Mar 10 12:36:44 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -92,6 +92,7 @@ void		my_show_list(t_list *);
 char		**my_str_to_wordtab_space(char *);
 int		my_str_isnum(char *);
 int		my_strcmp(char *, char *);
+int		my_strcmp_no_bz(char *, char *);
 char		*my_strdup(char *);
 int		my_strlen(char *);
 int		my_strncmp(char *, char *, int);

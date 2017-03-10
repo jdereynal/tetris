@@ -37,6 +37,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)move_shape.c		\
 		$(SRC)my_str_isnum.c		\
 		$(SRC)my_strcmp.c		\
+		$(SRC)my_strcmp_no_bz.c		\
 		$(SRC)my_strdup.c		\
 		$(SRC)my_strlen.c		\
 		$(SRC)my_strncmp.c		\
