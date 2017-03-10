@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Wed Mar  8 15:10:58 2017 remy
+** Last update Fri Mar 10 12:24:28 2017 remy
 */
 
 #ifndef TETRIS_H_
@@ -71,6 +71,7 @@ int		change_keys(char **, t_key_binding *);
 int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
 t_opt		check_args(int, char **);
+t_opt		check_final_binding(t_key_binding *);
 int		debug_flag(t_key_binding *, t_game *, t_list *);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);

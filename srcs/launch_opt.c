@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Feb 28 11:48:31 2017 remy
-** Last update Wed Mar  8 15:10:01 2017 remy
+** Last update Fri Mar 10 12:25:10 2017 remy
 */
 
 #include "tetris.h"
@@ -20,6 +20,8 @@ int	launch_opt(t_opt opt, char **argv,
       if (change_settings(argv, game) == RET_FAIL)
 	return (RET_FAIL);
       if (change_keys(argv, keys) == RET_FAIL)
+	return (RET_FAIL);
+      if (check_final_binding(keys) == RET_FAIL)
 	return (RET_FAIL);
     }
   return (RET_SUCCESS);

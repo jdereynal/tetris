@@ -12,9 +12,10 @@ CC	=	gcc
 SRC	=	srcs/
 
 SRCS	=	$(SRC)add_shape.c		\
-		$(SRC)check_args.c		\
 		$(SRC)change_keys.c		\
 		$(SRC)change_settings.c		\
+		$(SRC)check_args.c		\
+		$(SRC)check_final_binding.c	\
 		$(SRC)concat.c			\
 		$(SRC)colors.c			\
 		$(SRC)debug_flag.c		\
