@@ -5,7 +5,11 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:14:15 2017 remy
+<<<<<<< HEAD
 ** Last update Fri Mar 10 11:43:14 2017 remy
+=======
+** Last update Fri Mar 10 11:40:57 2017 jack
+>>>>>>> 80d5dd7148088e95f366ad6e3555f0c459591212
 */
 
 #include "tetris.h"
@@ -123,7 +127,7 @@ int	change_keys_2(char **argv, t_key_binding *keys,
 		      int *index_key, int *i)
 {
   int	index_key_2;
-  
+
   if (index_my_key(*i, index_key, argv) == RET_FAIL)
     return (RET_FAIL);
   else if (index_my_key(*i, index_key, argv) == (-1))
