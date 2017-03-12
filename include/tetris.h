@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Fri Mar 10 12:36:44 2017 remy
+** Last update Sun Mar 12 12:12:13 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -67,6 +67,7 @@ int		**add_shape(t_game *, t_list *);
 void		attribute_key(int, int, t_key_binding *);
 void		attribute_unknown_seq(int, char *, t_key_binding *);
 int		biggest_line(char **);
+int		can_shape_move_down(int **);
 int		change_keys(char **, t_key_binding *);
 int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
@@ -75,6 +76,7 @@ t_opt		check_final_binding(t_key_binding *);
 int		debug_flag(t_key_binding *, t_game *, t_list *);
 bool		extension(char *, char *);
 t_list		*get_tetriminos(char *);
+int		get_tetrimino_count(t_list *);
 char		*get_next_line(int);
 t_game		*game_init();
 int		has_moving_shape(int **);
@@ -86,6 +88,8 @@ bool		is_debug_flag(char **);
 bool		is_help_flag(char **);
 t_key_binding	*key_init();
 int		launch_opt(t_opt, char **, t_key_binding *, t_game *);
+int		**move_shape_left(t_game *);
+int		**move_shape_right(t_game *);
 int		my_printf(const char *, ...);
 int		my_getnbr(const char *);
 void		my_show_list(t_list *);
