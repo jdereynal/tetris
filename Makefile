@@ -43,6 +43,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)my_strlen.c		\
 		$(SRC)my_strncmp.c		\
 		$(SRC)normalize_shape.c		\
+		$(SRC)print_char.c		\
 		$(SRC)print_tetriminos.c	\
 		$(SRC)print_keys.c		\
 		$(SRC)print_game.c		\

@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Sun Mar 12 21:00:33 2017 jack
+** Last update Sun Mar 12 21:19:25 2017 jack
 */
 
 #include "tetris.h"
@@ -36,17 +36,17 @@ int		display_board(t_game *game, t_list *tetriminos)
   while (game->board[i])
     {
       j = 0;
-      wprintw(game->window, "|");
+      print_char(game->window, "|", 1);
       while (game->board[i][j] != -1)
 	{
 	  if (game->board[i][j] == 0)
-	    wprintw(game->window, " ");
+	    print_char(game->window, " ", 1);
 	  else
-	    wprintw(game->window, "*");
+	    print_char(game->window, "*", game->board[i][j]);
 	  wprintw(game->window, " ");
 	  j++;
 	}
-      wprintw(game->window, "|\n");
+      print_char(game->window, "|\n", 1);
       i++;
     }
   print_edge(game);
