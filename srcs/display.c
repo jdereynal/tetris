@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Sun Mar 12 11:24:47 2017 jack
+** Last update Sun Mar 12 21:00:33 2017 jack
 */
 
 #include "tetris.h"
@@ -59,7 +59,7 @@ int		init_display(t_game *game, t_list *tetriminos)
   game->board = init_game_board(game);
   game->board = add_shape(game, tetriminos);
   keypad(game->window, TRUE);
-  halfdelay(1);
+  nodelay(game->window, 1);
   while (1)
     {
       int k = wgetch(game->window);
