@@ -12,6 +12,7 @@ CC	=	gcc
 SRC	=	srcs/
 
 SRCS	=	$(SRC)add_shape.c		\
+		$(SRC)can_shape_move.c		\
 		$(SRC)change_keys.c		\
 		$(SRC)change_settings.c		\
 		$(SRC)check_args.c		\

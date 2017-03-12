@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar  7 12:12:21 2017 jack
-** Last update Tue Mar  7 15:49:06 2017 jack
+** Last update Sun Mar 12 11:28:55 2017 jack
 */
 
 #include <stdlib.h>
@@ -42,6 +42,8 @@ int		**update_board(t_game *game)
   int		i;
   int		j;
 
+  if (can_shape_move_down(game->board) == 0)
+    return (update_shape(game));
   i = 0;
   while (game->board[i])
     i++;
@@ -57,8 +59,6 @@ int		**update_board(t_game *game)
 		game->board[i + 1][j] = game->board[i][j];
 		game->board[i][j] = 0;
 	      }
-	    else
-	      return (update_shape(game));
 	  j++;
 	}
       i--;
