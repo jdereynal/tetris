@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Sun Mar 12 12:12:13 2017 jack
+** Last update Sun Mar 12 14:20:13 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -68,6 +68,8 @@ void		attribute_key(int, int, t_key_binding *);
 void		attribute_unknown_seq(int, char *, t_key_binding *);
 int		biggest_line(char **);
 int		can_shape_move_down(int **);
+int		can_shape_move_left(int **);
+int		can_shape_move_right(int **);
 int		change_keys(char **, t_key_binding *);
 int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
