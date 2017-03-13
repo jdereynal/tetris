@@ -5,18 +5,18 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar 13 13:19:42 2017 jack
-** Last update Mon Mar 13 14:20:49 2017 jack
+** Last update Mon Mar 13 18:41:14 2017 jack
 */
 
 #include "tetris.h"
 
-int		**apply_gravity(t_game *game)
+int		**apply_gravity(t_game *game, int line)
 {
   int		i;
   int		j;
 
   i = 0;
-  while (game->board[i])
+  while (i < line)
     {
       j = 0;
       while (game->board[i][j] != -1)
@@ -50,6 +50,7 @@ int		**remove_lines(t_game *game)
 {
   int		i;
   int		j;
+  int		k;
 
   i = 0;
   while (game->board[i])
@@ -61,8 +62,10 @@ int		**remove_lines(t_game *game)
 	    break ;
 	  if (game->board[i][j + 1] == -1)
 	    {
+	      k = 0;
 	      game->board = remove_line(game->board, i);
-	      game->board = apply_gravity(game);
+	      while (k++ < game->size_y)
+		game->board = apply_gravity(game, i);
 	    }
 	  j++;
 	}
