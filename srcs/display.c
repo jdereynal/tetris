@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Sun Mar 12 21:19:25 2017 jack
+** Last update Mon Mar 13 13:19:12 2017 jack
 */
 
 #include "tetris.h"
@@ -30,7 +30,7 @@ int		display_board(t_game *game, t_list *tetriminos)
   int		i;
   int		j;
 
-  i = 0;
+  i = 4;
   wclear(game->window);
   print_edge(game);
   while (game->board[i])
@@ -69,6 +69,7 @@ int		init_display(t_game *game, t_list *tetriminos)
 	game->board = move_shape_left(game);
       display_board(game, tetriminos);
       game->board = update_board(game);
+      game->board = remove_lines(game);
       if (has_moving_shape(game->board) == 0)
 	game->board = add_shape(game, tetriminos);
       usleep(100000);
