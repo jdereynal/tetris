@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar 14 14:06:05 2017 jack
-** Last update Tue Mar 14 15:32:37 2017 jack
+** Last update Tue Mar 14 15:36:04 2017 jack
 */
 
 #include "tetris.h"
@@ -32,16 +32,17 @@ int		max_size(t_key_binding *key)
 
 int		check_match(t_game *game, char *str)
 {
-  int		**tmp;
-
-  tmp = game->board;
   if (compare(game->keybindings->key_left, str))
+    {
       game->board = move_shape_left(game);
+      return (1);
+    }
   if (compare(game->keybindings->key_right, str))
+    {
       game->board = move_shape_right(game);
-  if (game->board == tmp)
-    return (0);
-  return (1);
+      return (1);
+    }
+  return (0);
 }
 
 int		handle_read(char *buffer, t_game *game)
