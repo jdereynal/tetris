@@ -5,10 +5,11 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Tue Mar 14 10:36:13 2017 jack
+** Last update Tue Mar 14 15:26:56 2017 jack
 */
 
 #include <unistd.h>
+#include <time.h>
 #include "tetris.h"
 #include "my_printf.h"
 
@@ -56,26 +57,27 @@ int		display_board(t_game *game, t_list *tetriminos)
 
 int		init_display(t_game *game, t_list *tetriminos)
 {
+  char		buffer[5];
   int		k;
 
+  srand(time(NULL));
   game->window = initscr();
   game->board = init_game_board(game);
   game->board = add_shape(game, tetriminos);
   keypad(game->window, TRUE);
-  nodelay(game->window, 1);
-  while (k != 27)
+  prepare_read();
+  while (1)
     {
-      k = wgetch(game->window);
-      if (k == KEY_RIGHT)
-	game->board = move_shape_right(game);
-      if (k == KEY_LEFT)
-	game->board = move_shape_left(game);
+      k = read(0, buffer, 4);
+      buffer[k] = '\0';
+      if (k > 0)
+	handle_read(buffer, game);
       display_board(game, tetriminos);
       game->board = update_board(game);
       game->board = remove_lines(game);
       if (has_moving_shape(game->board) == 0)
-	game->board = add_shape(game, tetriminos);
-      usleep(100000);
+      	game->board = add_shape(game, tetriminos);
+      usleep(200000);
     }
   endwin();
 }

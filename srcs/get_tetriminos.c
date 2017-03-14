@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Thu Mar  2 15:44:07 2017 jack
+** Last update Tue Mar 14 13:45:00 2017 jack
 */
 
 #include <dirent.h>
@@ -16,6 +16,12 @@
 #include <fcntl.h>
 #include "tetris.h"
 
+int		norme(t_object *obj)
+{
+  obj->error = 1;
+  return (RET_FAIL);
+}
+
 int		parse_tetrimino(int fd, t_object *obj)
 {
   char		*str;
@@ -23,10 +29,7 @@ int		parse_tetrimino(int fd, t_object *obj)
   int		i;
 
   if ((str = get_next_line(fd)) == NULL || only_numbers(str) == false)
-    {
-      obj->error = 1;
-      return (RET_SUCCESS);
-    }
+    norme(obj);
   tab = str_to_wordtab(str, ' ');
   if (my_tab_length(tab) < 3)
     return (RET_FAIL);

@@ -17,6 +17,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)change_settings.c		\
 		$(SRC)check_args.c		\
 		$(SRC)check_final_binding.c	\
+		$(SRC)compare.c			\
 		$(SRC)concat.c			\
 		$(SRC)colors.c			\
 		$(SRC)debug_flag.c		\
@@ -25,6 +26,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)extension.c		\
 		$(SRC)get_tetriminos.c		\
 		$(SRC)game_init.c		\
+		$(SRC)handle_read.c		\
 		$(SRC)help_flag.c		\
 		$(SRC)is_debug_flag.c		\
 		$(SRC)is_help_flag.c		\
@@ -43,6 +45,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)my_strlen.c		\
 		$(SRC)my_strncmp.c		\
 		$(SRC)normalize_shape.c		\
+		$(SRC)prepare_read.c		\
 		$(SRC)print_char.c		\
 		$(SRC)print_tetriminos.c	\
 		$(SRC)print_keys.c		\

@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar 14 10:32:50 2017 jack
+** Last update Tue Mar 14 15:14:49 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -25,16 +25,6 @@
 
 typedef int		t_opt;
 
-typedef struct		s_game
-{
-  bool			hide_next;
-  int			level;
-  int			size_x;
-  int			size_y;
-  WINDOW		*window;
-  int			**board;
-}			t_game;
-
 typedef struct		s_key_binding
 {
   char			*key_drop;
@@ -44,6 +34,17 @@ typedef struct		s_key_binding
   char			*key_right;
   char			*key_turn;
 }			t_key_binding;
+
+typedef struct		s_game
+{
+  bool			hide_next;
+  int			level;
+  int			size_x;
+  int			size_y;
+  WINDOW		*window;
+  int			**board;
+  t_key_binding		*keybindings;
+}			t_game;
 
 typedef struct		s_object
 {
@@ -73,6 +74,7 @@ int		can_shape_move_right(int **);
 int		change_keys(char **, t_key_binding *);
 int		change_settings(char **, t_game *);
 char		*concatenate(char *, char *);
+int		compare(char *, char *);
 t_opt		check_args(int, char **);
 t_opt		check_final_binding(t_key_binding *);
 int		debug_flag(t_key_binding *, t_game *, t_list *);
@@ -104,6 +106,7 @@ int		my_strlen(char *);
 int		my_strncmp(char *, char *, int);
 int		my_tab_length(char **);
 bool		only_numbers(char *);
+void		prepare_read();
 int		print_char(WINDOW *, char *, int);
 int		print_tab(char **);
 int		quit(char *, int);

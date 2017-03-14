@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar  7 11:53:08 2017 jack
-** Last update Tue Mar 14 10:26:47 2017 jack
+** Last update Tue Mar 14 13:54:49 2017 jack
 */
 
 #include <time.h>
@@ -19,7 +19,6 @@ t_list		*get_shape(t_list *tetriminos)
   t_list	*tmp;
 
   i = get_tetrimino_count(tetriminos);
-  srand(time(NULL));
   count = rand() % i;
   tmp = tetriminos->next;
   while (count && tmp != NULL)
