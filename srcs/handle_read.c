@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar 14 14:06:05 2017 jack
-** Last update Tue Mar 14 16:13:13 2017 jack
+** Last update Tue Mar 14 17:09:33 2017 jack
 */
 
 #include "tetris.h"
@@ -63,4 +63,5 @@ int		handle_read(char *buffer, t_game *game)
       free(str);
   if (str != NULL && my_strlen(str) >= max_size(game->keybindings))
     free(str);
+  display_board(game);
 }

@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Tue Mar 14 16:15:46 2017 jack
+** Last update Tue Mar 14 17:09:06 2017 jack
 */
 
 #include <unistd.h>
@@ -27,7 +27,7 @@ int		print_edge(t_game *game)
   wprintw(game->window, "+\n");
 }
 
-int		display_board(t_game *game, t_list *tetriminos)
+int		display_board(t_game *game)
 {
   int		i;
   int		j;
@@ -57,8 +57,9 @@ int		display_board(t_game *game, t_list *tetriminos)
 
 int		init_display(t_game *game, t_list *tetriminos)
 {
-  char		buffer[5];
+  char		buffer[2];
   int		k;
+  clock_t	start, end;
 
   srand(time(NULL));
   game->window = initscr();
@@ -66,18 +67,23 @@ int		init_display(t_game *game, t_list *tetriminos)
   game->board = add_shape(game, tetriminos);
   keypad(game->window, TRUE);
   prepare_read();
+  start = clock();
   while (1)
     {
-      k = read(0, buffer, 4);
-      buffer[k] = '\0';
+      end = clock();
+      k = read(1, buffer, 1);
+      buffer[k] = 0;
       if (k > 0)
 	handle_read(buffer, game);
-      display_board(game, tetriminos);
-      game->board = update_board(game);
-      game->board = remove_lines(game);
+      if (start - end < -400000)
+	{
+	  start = clock();
+	  display_board(game);
+	  game->board = update_board(game);
+	  game->board = remove_lines(game);
+	}
       if (has_moving_shape(game->board) == 0)
-      	game->board = add_shape(game, tetriminos);
-      usleep(200000);
+	game->board = add_shape(game, tetriminos);
     }
   endwin();
 }
