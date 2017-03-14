@@ -5,9 +5,10 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Mon Mar 13 14:45:51 2017 jack
+** Last update Tue Mar 14 10:36:13 2017 jack
 */
 
+#include <unistd.h>
 #include "tetris.h"
 #include "my_printf.h"
 
@@ -55,14 +56,16 @@ int		display_board(t_game *game, t_list *tetriminos)
 
 int		init_display(t_game *game, t_list *tetriminos)
 {
+  int		k;
+
   game->window = initscr();
   game->board = init_game_board(game);
   game->board = add_shape(game, tetriminos);
   keypad(game->window, TRUE);
   nodelay(game->window, 1);
-  while (1)
+  while (k != 27)
     {
-      int k = wgetch(game->window);
+      k = wgetch(game->window);
       if (k == KEY_RIGHT)
 	game->board = move_shape_right(game);
       if (k == KEY_LEFT)

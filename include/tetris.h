@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Sun Mar 12 14:22:43 2017 jack
+** Last update Tue Mar 14 10:32:50 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -104,14 +104,18 @@ int		my_strlen(char *);
 int		my_strncmp(char *, char *, int);
 int		my_tab_length(char **);
 bool		only_numbers(char *);
+int		print_char(WINDOW *, char *, int);
 int		print_tab(char **);
+int		quit(char *, int);
 char		*reverse(char *);
 int		sort_list(t_list *);
 char		**normalize_shape(char **, int);
+void		start_colors();
 char		**str_to_wordtab(char *, char);
 int		print_tetriminos(t_list *);
 int		print_keys(t_key_binding *);
 int		print_game(t_game *);
+int		**remove_lines(t_game *);
 char		*send_me_key(int, t_key_binding *);
 int		**update_board(t_game *);
 

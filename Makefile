@@ -47,6 +47,7 @@ SRCS	=	$(SRC)add_shape.c		\
 		$(SRC)print_tetriminos.c	\
 		$(SRC)print_keys.c		\
 		$(SRC)print_game.c		\
+		$(SRC)quit.c			\
 		$(SRC)remove_lines.c		\
 		$(SRC)reverse.c			\
 		$(SRC)rotate.c			\
