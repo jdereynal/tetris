@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar 14 14:06:05 2017 jack
-** Last update Tue Mar 14 15:58:20 2017 jack
+** Last update Tue Mar 14 16:13:13 2017 jack
 */
 
 #include "tetris.h"
@@ -48,6 +48,8 @@ int		check_match(t_game *game, char *str)
 	game->board = update_board(game);
       return (1);
     }
+  if (compare(game->keybindings->key_quit, str))
+    quit("Bye", 0);
   return (0);
 }
 
@@ -59,6 +61,6 @@ int		handle_read(char *buffer, t_game *game)
   if (str != NULL)
     if (check_match(game, str) == 1)
       free(str);
-  if (str != NULL && my_strlen(str) > max_size(game->keybindings))
+  if (str != NULL && my_strlen(str) >= max_size(game->keybindings))
     free(str);
 }

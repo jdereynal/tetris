@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar 14 15:14:49 2017 jack
+** Last update Tue Mar 14 16:15:40 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -22,6 +22,7 @@
 # define OPT_HELP	1
 # define RET_FAIL	84
 # define RET_SUCCESS	0
+# define TETRI_CHAR	"x"
 
 typedef int		t_opt;
 

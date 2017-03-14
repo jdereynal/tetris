@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Tue Mar 14 15:26:56 2017 jack
+** Last update Tue Mar 14 16:15:46 2017 jack
 */
 
 #include <unistd.h>
@@ -44,7 +44,7 @@ int		display_board(t_game *game, t_list *tetriminos)
 	  if (game->board[i][j] == 0)
 	    print_char(game->window, " ", 1);
 	  else
-	    print_char(game->window, "*", game->board[i][j]);
+	    print_char(game->window, TETRI_CHAR, game->board[i][j]);
 	  wprintw(game->window, " ");
 	  j++;
 	}
