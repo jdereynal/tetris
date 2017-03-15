@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Mon Mar  6 21:17:58 2017 jack
-** Last update Tue Mar 14 17:41:03 2017 jack
+** Last update Wed Mar 15 12:16:46 2017 jack
 */
 
 #include <unistd.h>
@@ -55,11 +55,32 @@ int		display_board(t_game *game)
   wrefresh(game->window);
 }
 
+int		game_loop(t_time times, t_game *game, t_list *tetriminos)
+{
+  int		k;
+  char		buffer[1];
+
+  while (1)
+    {
+      times.end = clock();
+      k = read(1, buffer, 1);
+      game->board = remove_lines(game);
+      if (k > 0)
+	handle_read(buffer, game);
+      if (times.start - times.end < -400000 + 15000 * game->level)
+	{
+	  times.start = clock();
+	  display_board(game);
+	  game->board = update_board(game);
+	}
+      if (has_moving_shape(game->board) == 0)
+	game->board = add_shape(game, tetriminos);
+    }
+}
+
 int		init_display(t_game *game, t_list *tetriminos)
 {
-  char		buffer[2];
-  int		k;
-  clock_t	start, end;
+  t_time	times;
 
   srand(time(NULL));
   game->window = initscr();
@@ -67,23 +88,7 @@ int		init_display(t_game *game, t_list *tetriminos)
   game->board = add_shape(game, tetriminos);
   keypad(game->window, TRUE);
   prepare_read();
-  start = clock();
-  while (1)
-    {
-      end = clock();
-      k = read(1, buffer, 1);
-      buffer[k] = 0;
-      if (k > 0)
-	handle_read(buffer, game);
-      if (start - end < -400000)
-	{
-	  start = clock();
-	  display_board(game);
-	  game->board = update_board(game);
-	  game->board = remove_lines(game);
-	}
-      if (has_moving_shape(game->board) == 0)
-	game->board = add_shape(game, tetriminos);
-    }
+  times.start = clock();
+  game_loop(times, game, tetriminos);
   endwin();
 }

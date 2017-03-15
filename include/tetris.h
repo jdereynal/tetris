@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Tue Mar 14 16:15:40 2017 jack
+** Last update Wed Mar 15 12:03:28 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -63,6 +63,13 @@ typedef struct		s_list
   int			id;
   struct s_list		*next;
 }			t_list;
+
+typedef struct		s_time
+{
+  clock_t		start;
+  clock_t		end;
+  clock_t		interval;
+}			t_time;
 
 int		add_elem_to_list(t_object, t_list *);
 int		**add_shape(t_game *, t_list *);
