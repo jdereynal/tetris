@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Fri Mar 17 11:16:50 2017 jack
+** Last update Fri Mar 17 17:39:30 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -116,6 +116,7 @@ int		my_strlen(char *);
 int		my_strncmp(char *, char *, int);
 int		my_tab_length(char **);
 bool		only_numbers(char *);
+int		only_tetri_chars(char *);
 int		press_any_key();
 void		prepare_read();
 int		print_char(WINDOW *, char *, int);

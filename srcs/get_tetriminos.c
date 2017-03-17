@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Tue Mar 14 13:45:00 2017 jack
+** Last update Fri Mar 17 17:46:26 2017 jack
 */
 
 #include <dirent.h>
@@ -16,7 +16,7 @@
 #include <fcntl.h>
 #include "tetris.h"
 
-int		norme(t_object *obj)
+int		fail(t_object *obj)
 {
   obj->error = 1;
   return (RET_FAIL);
@@ -29,7 +29,7 @@ int		parse_tetrimino(int fd, t_object *obj)
   int		i;
 
   if ((str = get_next_line(fd)) == NULL || only_numbers(str) == false)
-    norme(obj);
+    return (fail(obj));
   tab = str_to_wordtab(str, ' ');
   if (my_tab_length(tab) < 3)
     return (RET_FAIL);
@@ -41,11 +41,12 @@ int		parse_tetrimino(int fd, t_object *obj)
   i = 0;
   while ((str = get_next_line(fd)) != NULL)
     {
+      if (only_tetri_chars(str) == 0)
+	return (fail(obj));
       obj->shape[i++] = my_strdup(str);
       free(str);
     }
   obj->shape[i] = 0;
-  obj->shape = normalize_shape(obj->shape, obj->height);
   obj->error = 0;
   return (RET_SUCCESS);
 }
@@ -77,8 +78,9 @@ int		read_directory(char *path, t_list *my_list)
     {
       if (extension(res->d_name, ".tetrimino"))
 	{
-	  if (parse_file(res->d_name, path, &obj) == RET_SUCCESS)
-	    add_elem_to_list(obj, my_list);
+	  parse_file(res->d_name, path, &obj);
+	  obj.shape = normalize_shape(obj.shape, obj.height);
+	  add_elem_to_list(obj, my_list);
 	}
     }
   return (RET_SUCCESS);
