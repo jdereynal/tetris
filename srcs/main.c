@@ -5,15 +5,27 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Tue Mar 14 16:07:30 2017 jack
+** Last update Fri Mar 17 11:14:23 2017 jack
 */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 #include "my_printf.h"
 #include "tetris.h"
 
 int			setupterm(char *, int, int *);
+
+int			press_any_key()
+{
+  int			k;
+  char			buffer[1];
+
+  prepare_read();
+  k = read(0, buffer, 1);
+  while (k <= 0)
+    k = read(0, buffer, 1);
+}
 
 int			main(int ac, char **av)
 {
