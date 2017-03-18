@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:09:25 2017 remy
-** Last update Fri Mar 17 17:50:56 2017 jack
+** Last update Sat Mar 18 09:26:04 2017 jack
 */
 
 #include <stdlib.h>
@@ -37,7 +37,8 @@ int			main(int ac, char **av)
   opt = check_args(ac, av);
   if ((my_list = get_tetriminos("tetriminos")) == NULL)
     return (RET_FAIL);
-  sort_list(my_list);
+  if (my_list->next != NULL)
+    sort_list(my_list);
   setupterm((char *)0, 1, (int *)0);
   if ((game = game_init()) == NULL)
     return (RET_FAIL);

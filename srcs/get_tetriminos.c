@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Sun Feb 26 15:31:45 2017 jack
-** Last update Fri Mar 17 17:46:26 2017 jack
+** Last update Sat Mar 18 10:25:30 2017 jack
 */
 
 #include <dirent.h>
@@ -79,7 +79,8 @@ int		read_directory(char *path, t_list *my_list)
       if (extension(res->d_name, ".tetrimino"))
 	{
 	  parse_file(res->d_name, path, &obj);
-	  obj.shape = normalize_shape(obj.shape, obj.height);
+	  if (obj.error == 0)
+	    obj.shape = normalize_shape(obj.shape, obj.height);
 	  add_elem_to_list(obj, my_list);
 	}
     }

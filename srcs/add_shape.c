@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar  7 11:53:08 2017 jack
-** Last update Tue Mar 14 13:54:49 2017 jack
+** Last update Sat Mar 18 09:20:35 2017 jack
 */
 
 #include <time.h>
@@ -18,6 +18,8 @@ t_list		*get_shape(t_list *tetriminos)
   int		count;
   t_list	*tmp;
 
+  if (tetriminos->next == NULL)
+    return (NULL);
   i = get_tetrimino_count(tetriminos);
   count = rand() % i;
   tmp = tetriminos->next;
@@ -35,7 +37,8 @@ int		**add_shape(t_game *game, t_list *tetriminos)
   int		i;
   int		j;
 
-  tmp = get_shape(tetriminos);
+  if ((tmp = get_shape(tetriminos)) == NULL)
+    return (game->board);
   i = 0;
   while (tmp->obj.shape[i])
     {

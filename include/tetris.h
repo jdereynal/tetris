@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 **
 ** Started on  Tue Feb 21 15:11:51 2017 remy
-** Last update Fri Mar 17 17:39:30 2017 jack
+** Last update Sat Mar 18 09:38:11 2017 jack
 */
 
 #ifndef TETRIS_H_
@@ -131,6 +131,7 @@ int		print_tetriminos(t_list *);
 int		print_keys(t_key_binding *);
 int		print_game(t_game *);
 int		**remove_lines(t_game *);
+int		**rotate_shape(t_game *);
 char		*send_me_key(int, t_key_binding *);
 int		**update_board(t_game *);
 

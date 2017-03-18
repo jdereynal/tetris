@@ -75,8 +75,6 @@ DEBUG	?=	1;
 
 ifeq	($(DEBUG), 1)
 	CFLAGS	+=	-g3
-else
-	CFLAGS	+=	-O2
 endif
 
 all:	$(NAME)

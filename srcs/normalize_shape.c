@@ -1,12 +1,11 @@
-
 /*
-** normalize_shape.c for tetris in /home/remy/blinux/remy.machado/PSU_2016_tetris/srcs
-** 
-** Made by remy
-** Login   <remy@epitech.net>
-** 
-** Started on  Tue Feb 28 11:37:45 2017 remy
-** Last update Tue Feb 28 21:23:56 2017 remy
+** normalize_shape.c for  in /home/jack/rendu/psu/PSU_2016_tetris
+**
+** Made by jack
+** Login   <jack@epitech.net>
+**
+** Started on  Sat Mar 18 10:19:31 2017 jack
+** Last update Sat Mar 18 10:21:24 2017 jack
 */
 
 #include <stdlib.h>
@@ -20,6 +19,8 @@ char	**normalize_shape(char **shape, int height)
   char	**result;
 
   j = 0;
+  if (shape == NULL)
+    return (NULL);
   i = biggest_line(shape);
   if ((result = malloc(sizeof(char *) * (height + 1))) == NULL)
     return (NULL);

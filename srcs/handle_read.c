@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 **
 ** Started on  Tue Mar 14 14:06:05 2017 jack
-** Last update Fri Mar 17 11:17:59 2017 jack
+** Last update Sat Mar 18 09:37:16 2017 jack
 */
 
 #include "tetris.h"
@@ -50,6 +50,11 @@ int		check_match(t_game *game, char *str)
     }
   if (compare(game->keybindings->key_quit, str))
     quit("Bye", 0);
+  if (compare(game->keybindings->key_turn, str))
+    {
+      game->board = rotate_shape(game);
+      return (1);
+    }
   return (0);
 }
 
