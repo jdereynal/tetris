@@ -5,7 +5,7 @@
 ** Login   <remy@epitech.net>
 ** 
 ** Started on  Tue Mar  7 15:39:24 2017 remy
-** Last update Wed Mar  8 15:28:05 2017 remy
+** Last update Sun Mar 19 12:55:08 2017 remy machado
 */
 
 #include "my_printf.h"
@@ -65,11 +65,12 @@ int	change_settings(char **argv, t_game *game)
 	  ((argv[i + 1] == NULL) || !my_str_isnum(argv[i + 1])))
 	return (RET_FAIL);
       else if (!my_strcmp(argv[i], "-l") &&
-	  ((argv[i + 1] != NULL) || my_str_isnum(argv[i + 1])))
+	       ((argv[i + 1] != NULL) || my_str_isnum(argv[i + 1])))
 	game->level = my_getnbr(argv[i + 1]);
       if (!my_strncmp(argv[i], "--level=", 8) && !my_str_isnum(argv[i] + 8))
 	return (RET_FAIL);
-      else if (!my_strncmp(argv[i], "--level=", 8) && my_str_isnum(argv[i] + 8))
+      else if (!my_strncmp(argv[i], "--level=", 8) &&
+	       my_str_isnum(argv[i] + 8))
 	game->level = my_getnbr(argv[i] + 8);
       if (!my_strncmp(argv[i], "--map-size=", 11) &&
 	  change_map_size_settings(argv[i], game) == RET_FAIL)

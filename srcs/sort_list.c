@@ -1,11 +1,11 @@
 /*
-1;2802;0c** sort_list.c for tetris in /home/jack/rendu/psu/PSU_2016_tetris
+** sort_list.c for tetris in /home/jack/rendu/psu/PSU_2016_tetris
 **
 ** Made by jack
 ** Login   <jack@epitech.net>
 **
 ** Started on  Wed Mar  1 16:52:50 2017 jack
-** Last update Tue Mar  7 16:52:35 2017 remy
+** Last update Sun Mar 19 12:55:38 2017 remy machado
 */
 
 #include <stdlib.h>
